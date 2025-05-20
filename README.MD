@@ -1,11 +1,13 @@
 # MidiPlus SmartPad RGB Editor
 
-**Version:** 0.1.0 (Beta)
+**Version:** 0.1.1 (Windows Executable Beta)
 **Author:** RegularRegs (GitHub: reg0lino)
 **Development Assistance:** Google's Gemini 2.5 AI
 **Date:** May 20, 2025
 
-A desktop application for Windows, macOS, and Linux, built with Python and PyQt6, designed to control the RGB LEDs of the MidiPlus SmartPad (and potentially compatible 8x8 MIDI controllers that use velocity for color selection). This tool allows for direct pad painting and creation of simple frame-by-frame animations using the SmartPad's 8-color palette.
+A desktop application for Windows (with source code potentially adaptable for macOS/Linux), built with Python and PyQt6. It's designed to control the RGB LEDs of the MidiPlus SmartPad and similar 8x8 MIDI controllers that use velocity for color selection. This tool allows for direct pad painting and creation of simple frame-by-frame animations using the SmartPad's 8-color palette.
+
+This project provides a functional base. While the original author (RegularRegs) may be moving on to other projects (potentially involving disassembling this specific SmartPad for parts!), the source code is provided for the community to use, learn from, and build upon.
 
 ## Features
 
@@ -26,12 +28,13 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
     *   **Playback Controls:** Play, Pause, Stop animation.
     *   **Speed Control:** Adjustable animation speed (displayed as FPS and ms/frame).
     *   **Looping:** Toggle animation looping.
-    *   **File Management:**
-        *   Save current animation sequence to a JSON file.
-        *   Load animation sequences from JSON files.
+    *   **File Management (Animation Studio):**
+        *   Save current animation sequence to a JSON file (prompts for name).
+        *   Load animation sequences from JSON files (via dialog or dropdown).
         *   "New Animation" clears the current sequence.
         *   Manage saved animations via a dropdown list (Load, Delete).
 *   **Dark Theme UI:** Styled for a comfortable user experience.
+*   **Windows Executable:** Packaged for easier use on Windows without needing a Python environment.
 
 ## Screenshots
 
@@ -39,14 +42,26 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
 
 ## Requirements
 
-*   Python 3.8+
-*   PyQt6
-*   mido
+*   **For running from source:**
+    *   Python 3.8+
+    *   PyQt6
+    *   mido
+    *   python-rtmidi (for MIDI backend on some systems)
+    *   (See `requirements.txt` for specific versions)
+*   **For using the Windows Executable:**
+    *   Windows 10/11.
 *   A MidiPlus SmartPad or compatible 8x8 MIDI controller.
 
-(See `requirements.txt` for specific versions)
-
 ## Installation & Setup
+
+**Option 1: Using the Windows Executable (Recommended for most Windows users)**
+
+1.  Go to the [Releases page](https://github.com/reg0lino/MidiPlusSmartPadRGBEditor/releases) of this repository.
+2.  Download the latest `SmartPadEditor_Windows.zip` (or similar) file.
+3.  Extract the ZIP file to a folder on your computer.
+4.  Navigate into the extracted folder (e.g., `SmartPadEditor`) and run `SmartPadEditor.exe`.
+
+**Option 2: Running from Source (For developers or other platforms)**
 
 1.  **Clone the repository:**
     ```bash
@@ -74,7 +89,7 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
 ## Usage
 
 1.  Connect your MidiPlus SmartPad to your computer.
-2.  Launch the application (`smartpad_rgb_app.py`).
+2.  Launch the application (`SmartPadEditor.exe` or `python smartpad_rgb_app.py`).
 3.  Select the correct MIDI port for your SmartPad from the "MIDI Connection" dropdown and click "Connect". The device pads should clear.
 4.  Use the "Color Palette" to select a color.
 5.  Click or drag on the 8x8 grid to paint pads. Right-click or select "Off" from the palette to erase.
@@ -85,16 +100,22 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
     *   Use Play/Pause/Stop and speed controls for playback.
     *   Save your animations using the "Save As..." button in the "Animation Studio".
 
-## Planned Features / To-Do (Future) (If I dont strip it for robot parts)
+## Future Development & Contributing
 
-*   More robust error handling and user feedback.
-*   Implementation of standard animator hotkeys (Undo/Redo, Copy/Paste frames, etc.).
-*   Multi-frame selection and operations in the timeline.
-*   Refined UI/UX elements (e.g., more detailed tooltips, status bar messages).
-*   Option to configure "dead pads" on the hardware. (being that mine is jacked up)
-*   Packaging as a standalone executable. (maybe soon once I test everything, as I will probably disassemble this for my robot project)
+NONE. I have used AI and developed this application to a functional beta state (v0.1.1) and is likely concluding direct feature development due to other projects.
+(Like taking it apart for to make a DIY robot. lol)
+Please feel free to take the code and build on it. I highly recommend using Gemini 2.5 if you are new to coding. 
 
-## Contributing
+**The project is open for community contributions!** If you'd like to expand on it, here are some ideas that were considered or would be valuable additions:
+
+*   **Standard Animator Hotkeys:** Undo/Redo, Copy/Paste frames, etc.
+*   **Multi-Frame Selection:** For batch operations in the timeline (delete, duplicate, copy/paste multiple frames at once).
+*   **Enhanced Tooltips & Status Bar:** More descriptive feedback throughout the UI.
+*   **UI Polishing:** Further refinement of layouts and visual elements.
+*   **"Dead Pad" Configuration:** A way for users to mark specific pads on their hardware as unresponsive so the GUI can reflect this.
+*   **Animation Export:** e.g., as an animated GIF.
+*   **Cross-Platform Executables:** Creating bundled versions for macOS and Linux.
+*   **More Robust Error Handling.**
 
 Contributions, bug reports, and feature requests are welcome! Please feel free to open an issue or submit a pull request.
 
