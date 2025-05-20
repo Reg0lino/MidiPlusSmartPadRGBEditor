@@ -35,7 +35,7 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
 
 ## Screenshots
 
-![Screenshot of MidiPlus SmartPad RGB Editor](placeholder_screenshot.png)
+![Screenshot of MidiPlus SmartPad RGB Editor](https://github.com/user-attachments/assets/dbd04447-624d-4df7-9aee-a084fbaf22e7)
 
 ## Requirements
 
