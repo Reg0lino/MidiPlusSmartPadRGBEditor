@@ -35,8 +35,7 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
 
 ## Screenshots
 
-*(Consider adding a screenshot like the one you last provided here once the UI is more polished)*
-![Screenshot of MidiPlus SmartPad RGB Editor](placeholder_screenshot.png)
+![Screenshot of MidiPlus SmartPad RGB Editor](https://github.com/user-attachments/assets/dbd04447-624d-4df7-9aee-a084fbaf22e7)
 
 ## Requirements
 
@@ -86,15 +85,14 @@ A desktop application for Windows, macOS, and Linux, built with Python and PyQt6
     *   Use Play/Pause/Stop and speed controls for playback.
     *   Save your animations using the "Save As..." button in the "Animation Studio".
 
-## Planned Features / To-Do (Future)
+## Planned Features / To-Do (Future) (If I dont strip it for robot parts)
 
 *   More robust error handling and user feedback.
 *   Implementation of standard animator hotkeys (Undo/Redo, Copy/Paste frames, etc.).
 *   Multi-frame selection and operations in the timeline.
 *   Refined UI/UX elements (e.g., more detailed tooltips, status bar messages).
-*   Option to configure "dead pads" on the hardware.
-*   Export animations (e.g., as GIF).
-*   Packaging as a standalone executable.
+*   Option to configure "dead pads" on the hardware. (being that mine is jacked up)
+*   Packaging as a standalone executable. (maybe soon once I test everything, as I will probably disassemble this for my robot project)
 
 ## Contributing
 
