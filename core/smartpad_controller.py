@@ -55,11 +55,14 @@ class SmartPadController(QObject):
 
     @staticmethod
     def get_available_ports() -> list[str]:
-        """Returns a list of available MIDI output port names."""
+        print("DEBUG SC: get_available_ports() called") # New print
         try:
-            return mido.get_output_names()
+            ports = mido.get_output_names()
+            print(f"DEBUG SC: mido.get_output_names() returned: {ports}") # New print
+            return ports
         except Exception as e:
-            print(f"Error getting MIDI output names: {e}")
+            print(f"DEBUG SC: Error in mido.get_output_names(): {e}") # New print
+            # self.error_occurred.emit(f"MIDI Port Discovery Error: {e}") # Careful with emitting signals from static method
             return []
 
     def connect(self, port_name: str = None) -> bool:
@@ -96,6 +99,7 @@ class SmartPadController(QObject):
                 self.error_occurred.emit(msg)
                 self.connection_status_changed.emit(False, msg)
                 return False
+            print(f"DEBUG SC: Attempting to connect to target_port_name: '{target_port_name}'") # New print
         
         try:
             self._midi_port = mido.open_output(target_port_name)
